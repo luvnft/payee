@@ -1,10 +1,14 @@
 <!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
 <script lang="ts">
+	import { getModalStore, type ModalSettings } from '@skeletonlabs/skeleton';
+
+	const modalStore = getModalStore();
 	import { onMount } from 'svelte';
 	import { Html5Qrcode } from 'html5-qrcode';
-	import Header from '$lib/header.svelte';
+	import { goto } from '$app/navigation';
 
 	let scanning = false;
+	let scanned = false;
 	let html5Qrcode: Html5Qrcode;
 
 	onMount(init);
@@ -31,8 +35,33 @@
 		scanning = false;
 	}
 
+	function scanResultModal(scannedValue: any): ModalSettings {
+		const modal: ModalSettings = {
+			type: 'confirm',
+			// Data
+			title: 'Add to cart?',
+			body: scannedValue,
+			// TRUE if confirm pressed, FALSE if cancel pressed
+			response: (r: boolean) => console.log('response:', r)
+		};
+		return modal;
+	}
+
 	function onScanSuccess(decodedText: any, decodedResult: any) {
-		alert(`Scanned = ${decodedText}`);
+		const mod = scanResultModal(decodedText);
+		try {
+			// if (!scanned) {
+			// 	modalStore.trigger(mod);
+			// 	scanned = true;
+			// 	stop();
+			// }
+			modalStore.trigger(mod);
+			stop();
+		} catch (error) {
+			console.log('..try/catch error..');
+		}
+
+		//alert(`Scanned = ${decodedText}`);
 		console.log(decodedResult);
 	}
 
@@ -41,7 +70,6 @@
 	}
 </script>
 
-<Header />
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-5">
 		<!-- <h1 class="h1">Let's get cracking bones!</h1>

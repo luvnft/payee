@@ -1,11 +1,15 @@
+<script>
+	import { goto } from '$app/navigation';
+</script>
+
 <nav class="bg-white border-gray-200 dark:bg-gray-900">
 	<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-		<a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+		<a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
 			<img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
 			<span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">payee</span
 			>
 		</a>
-		<button
+		<!-- <button
 			data-collapse-toggle="navbar-default"
 			type="button"
 			class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -28,33 +32,33 @@
 					d="M1 1h15M1 7h15M1 13h15"
 				/>
 			</svg>
-		</button>
-		<div class="hidden w-full md:block md:w-auto" id="navbar-default">
+		</button> -->
+		<div class="w-full md:block md:w-auto" id="navbar-default">
 			<ul
-				class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+				class="font-medium flex flex-row p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
 			>
-				<li>
+				<!-- <li>
 					<a
 						href="#mark"
 						class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
 						aria-current="page">Home</a
 					>
-				</li>
+				</li> -->
 				<li>
 					<a
-						href="#mark"
+						href="/about"
 						class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
 						>About</a
 					>
 				</li>
 				<li>
 					<a
-						href="#mark"
+						href="/settings"
 						class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-						>Services</a
+						>Settings</a
 					>
 				</li>
-				<li>
+				<!-- <li>
 					<a
 						href="#mark"
 						class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
@@ -67,7 +71,33 @@
 						class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
 						>Contact</a
 					>
-				</li>
+				</li> -->
+				<button
+					type="button"
+					on:click={() => goto('/cart')}
+					class="relative inline-flex items-center p-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-9 h-9 md:w-7 md:h-7"
+				>
+					<svg
+						class="w-4 h-4"
+						aria-hidden="true"
+						xmlns="http://www.w3.org/2000/svg"
+						fill="currentColor"
+						viewBox="0 0 20 16"
+					>
+						<path
+							d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
+						/>
+						<path
+							d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
+						/>
+					</svg>
+					<span class="sr-only">Cart</span>
+					<div
+						class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2 dark:border-gray-900"
+					>
+						20
+					</div>
+				</button>
 			</ul>
 		</div>
 	</div>

@@ -1,6 +1,11 @@
 <script lang="ts">
 	import '../app.postcss';
 
+	// Modals req
+	import { Modal, initializeStores } from '@skeletonlabs/skeleton';
+
+	initializeStores();
+
 	// Highlight JS
 	import hljs from 'highlight.js/lib/core';
 	import 'highlight.js/styles/github-dark.css';
@@ -20,6 +25,10 @@
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
+
+	import Header from '$lib/header.svelte';
 </script>
 
+<Header />
+<Modal />
 <slot />
