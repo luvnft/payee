@@ -1,18 +1,16 @@
-# create-svelte
+# Payee
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-## Creating a project
+## Logo  
 
-If you're seeing this, you've probably already done this step. Congrats!
+<img src="https://github.com/occiandiaali/payee/assets/40769994/792f8f5a-59f8-4835-a850-48aac73a8386.jpg" width="200"> <img src="https://github.com/occiandiaali/payee/assets/40769994/e20186bc-36e3-4379-94be-2c0524b9ef65.jpg" width="200"> <img src="https://github.com/occiandiaali/payee/assets/40769994/f156c087-b044-4589-b9a3-94a5f3191366.jpg" width="200">  
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Screencast  
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+[payee-wip-demo.webm](https://github.com/occiandiaali/payee/assets/40769994/ea765644-3522-470c-81c1-9ba77a7cfd9d)
+
+
 
 ## Developing
 
